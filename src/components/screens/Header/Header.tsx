@@ -1,37 +1,67 @@
-import * as React from 'react';
+import  { useState } from 'react';
 
-import {CssBaseline, Box, Typography, Toolbar, AppBar, IconButton, Button } from '@mui/material';
-import MenuIcon from '@mui/material/Icon'
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { Box, Typography, Toolbar, AppBar, IconButton, TextField, InputAdornment } from '@mui/material';
+import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import PersonIcon from '@mui/icons-material/Person';
+import ShoppingBasket from '@mui/icons-material/ShoppingBasket';
+import SearchIcon from '@mui/icons-material/Search';
+
 
 
 function Header(){
 
+  const [colors, setColors] = useState('inherit');
 
-
+  const handleClick = () => {
+    setColors('red');
+    setTimeout(() => {
+      setColors('inherit');
+    }, 1000);
+  }
   return (
-    <React.Fragment>
-      <CssBaseline />
-     
-        <AppBar position='static'>
+        <AppBar 
+        position='static'
+        color='transparent'
+          >
           <Toolbar>
-            <IconButton edge='start'
-            color='inherit'
-            arial-label='menu'
-            sx={{ mr: 2 }}>
-                <MenuIcon />
-            </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>Farm products</Typography>
+            <IconButton 
+            color='inherit'
+            >
+              <GridViewRoundedIcon />
+              <Typography variant="h6">Поиск</Typography>
+            </IconButton>
+            <TextField id="filled-basic" label='Поиск' variant="filled" InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            }}/>
             <Box mr={3}>
-                <Button color='inherit' variant='outlined'>Log in</Button>
+                
             </Box>
-            <Button color='secondary' variant='contained'>sign up</Button>
+            <IconButton 
+            color='inherit'
+            >
+              <ShoppingBasket />
+            </IconButton>
+            <IconButton 
+            style={{ color: colors }} onClick={handleClick}
+            color='inherit'
+            
+            >
+              <FavoriteIcon />
+            </IconButton>
+            <IconButton 
+            color='inherit'
+            >
+              <PersonIcon />
+            </IconButton>
+            
           </Toolbar>
         </AppBar>
-      
-      <Toolbar />
-      
-    </React.Fragment>
   );
 }
 export default Header;
