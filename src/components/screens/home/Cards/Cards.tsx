@@ -14,7 +14,8 @@ const Cards: React.FC = () => {
                       backgroundSize: 'cover',
                       width: 200,
                       height: '200px',
-                      color: 'white' }}>
+                      color: 'white',
+                      borderRadius: 16 }}>
                       <CardContent>
                       <Typography variant="h6">{range.title}</Typography>
                       </CardContent>
