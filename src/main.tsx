@@ -1,16 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Header from './components/screens/Header/Header'
-import Cards from './components/screens/Home/Cards/Cards'
-import MyCarousel from './components/screens/Home/Carousel/Carousel'
+import Home from './components/screens/Home/Home'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-     <Header />
-
-      <MyCarousel />
-     <Cards />
+     <Home />
   </React.StrictMode>
  
 )

@@ -1,6 +1,6 @@
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-// import style from 'Carousel.module.scss'
+import { items } from './CarouselData'
 
 const MyCarousel = () => {
   const responsive = {
@@ -20,50 +20,7 @@ const MyCarousel = () => {
     },
   };
 
-  const items = [
-    {
-        name: 'lol',
-        image: 'https://cdn.esh-derevenskoe.ru/image/cache/catalog/aec48c-400x400.jpg?v=3'
-
-    },
-    {
-        name: 'lol2',
-        image: 'https://cdn.esh-derevenskoe.ru/image/cache/catalog/eee36c-400x400.jpg?v=3'
-
-    },
-    {
-        name: 'lol3',
-        image: 'https://cdn.esh-derevenskoe.ru/image/cache/catalog/aec48c-400x400.jpg?v=3'
-
-    },
-    {
-        name: 'lol4',
-        image: 'https://cdn.esh-derevenskoe.ru/image/cache/catalog/eee36c-400x400.jpg?v=3'
-
-    },
-    {
-        name: 'lol',
-        image: 'https://cdn.esh-derevenskoe.ru/image/cache/catalog/aec48c-400x400.jpg?v=3'
-
-    },
-    {
-        name: 'lol2',
-        image: 'https://cdn.esh-derevenskoe.ru/image/cache/catalog/eee36c-400x400.jpg?v=3'
-
-    },
-    {
-        name: 'lol3',
-        image: 'https://cdn.esh-derevenskoe.ru/image/cache/catalog/aec48c-400x400.jpg?v=3'
-
-    },
-    {
-        name: 'lol4',
-        image: 'https://cdn.esh-derevenskoe.ru/image/cache/catalog/eee36c-400x400.jpg?v=3'
-
-    },
-    
-  ];
-
+ 
   return (
     <div style={{ maxWidth: '55%', margin: '0 auto' }}>
     <Carousel
