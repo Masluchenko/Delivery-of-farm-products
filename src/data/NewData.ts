@@ -1,9 +1,9 @@
-type CarouselInfo = {
+type NewInfo  = {
     name: string,
-    image: string
+    image: string,
 }
 
-export const items: CarouselInfo[] = [
+export const NewSet: NewInfo[] = [
     {
         name: 'lol',
         image: 'https://cdn.esh-derevenskoe.ru/image/cache/catalog/aec48c-400x400.jpg?v=3'

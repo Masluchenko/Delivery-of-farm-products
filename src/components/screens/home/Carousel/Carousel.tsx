@@ -20,7 +20,6 @@ const MyCarousel = () => {
     },
   };
 
- 
   return (
     <div style={{ maxWidth: '55%', margin: '0 auto' }}>
     <Carousel
