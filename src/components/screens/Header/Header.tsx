@@ -6,8 +6,8 @@ import PersonIcon from '@mui/icons-material/Person';
 import ShoppingBasket from '@mui/icons-material/ShoppingBasket';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from "react-router-dom";
-import Home from '../Home/Home'
-import Cards from '../Home/Cards/Cards'
+// import Home from '../Home/Home'
+// import Cards from '../Home/Cards/Cards'
 
 
 
