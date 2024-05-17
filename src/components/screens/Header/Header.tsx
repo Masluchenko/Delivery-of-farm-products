@@ -13,14 +13,22 @@ import  Sign  from '../SignUp/Sign';
 
 
 function Header(){
-  const [colors, setColors] = useState('inherit');
+  const [colorsFavorit, setColorsFavorit] = useState('inherit');
+  const [colorsBasket, setColorsBasket] = useState('inherit');
 
   const handleClick = () => {
-    setColors('red');
+    setColorsFavorit('red');
     setTimeout(() => {
-      setColors('inherit');
+      setColorsFavorit('inherit');
     }, 1000);
   }
+  const BasketClick = () => {
+    setColorsBasket('green');
+    setTimeout(() => {
+      setColorsBasket('black');
+    }, 1000);
+  }
+
   return (
         <AppBar 
         position='static'
@@ -56,17 +64,18 @@ function Header(){
                     ),
                   }}/>
                   
-                  <IconButton sx={{marginRight: 1}}
-                  color='inherit'>
-                    <ShoppingBasket />
-                  </IconButton>
+                  <Link to="/Basket">
+                    <IconButton sx={{marginRight: 1}}
+                      style={{ color: colorsBasket }} onClick={BasketClick}
+                      color='inherit'>
+                        <ShoppingBasket />
+                    </IconButton>
+                  </Link>
 
                   <IconButton sx={{marginRight: 1}}
-                  style={{ color: colors }} onClick={handleClick}
-                  color='inherit'
-                  
-                  >
-                    <FavoriteIcon />
+                    style={{ color: colorsFavorit }} onClick={handleClick}
+                    color='inherit'>
+                      <FavoriteIcon />
                   </IconButton>
                   
                   <Sign />
