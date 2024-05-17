@@ -7,10 +7,13 @@ const Cards: React.FC = () => {
 
     return (
       <Box >
+      <Typography variant="h4"
+       display="flex" justifyContent="center"
+       sx={{marginBottom: 2}}>Наш ассортимент</Typography>
         <Grid sx={{ flexGrow: 1 }} container justifyContent="center">
           <Grid item xs={8}>
-            <Typography variant="h4" >Наш ассортимент</Typography>
-            <Grid container justifyContent="center" spacing={2.5}>
+            
+            <Grid container justifyContent="center" spacing={2}>
               {range.map((range, index) => (
                 <Grid key={index} item>
                   <CardActionArea>

@@ -1,4 +1,5 @@
-import  { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import { Typography, Toolbar, AppBar, IconButton, TextField, InputAdornment, Button } from '@mui/material';
 import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -6,8 +7,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import ShoppingBasket from '@mui/icons-material/ShoppingBasket';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from "react-router-dom";
-// import Home from '../Home/Home'
-// import Cards from '../Home/Cards/Cards'
+import  Sign  from '../SignUp/Sign';
 
 
 
@@ -25,29 +25,30 @@ function Header(){
         <AppBar 
         position='static'
         color='transparent'
-        sx={{ marginBottom: 5 }}
-          >
-          
-            <Toolbar sx={{ justifyContent: 'center' }}>
-              
-                  <Button variant="text" color="inherit" sx={{borderRadius: '10%'}}>
-                  <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    <Link to="/">Farm products</Link>
+        sx={{ marginBottom: 5 }}>
+            <Toolbar sx={{ justifyContent: 'center' }}> 
+                  <Link to="/">
+                  <Button variant="text" color="success" sx={{marginRight: 3}}>
+                    <Typography variant="h6" component="div" 
+                    style={{ fontFamily: "Pacifico, cursive" }}
+                    sx={{ flexGrow: 1 }}>
+                      Farm products
                     </Typography>
                   </Button>
-                
-                  <IconButton 
-                  
-                  color='inherit'
-                  sx={{border: '2px solid #000', borderRadius: '10%', padding: '0.5rem'}}
-                  > 
-                    <GridViewRoundedIcon />
-                    <Typography variant="h6">
-                      <Link to="/Cards">Каталог</Link>
-                      </Typography>
-                  </IconButton>
-                
-                  <TextField id="filled-basic" label='Поиск' variant="filled" InputProps={{
+                  </Link>
+
+                  <Link to="/Cards">
+                    <Button variant="contained"
+                     color='success'
+                     sx={{marginRight: 3}}
+                     startIcon={<GridViewRoundedIcon />}>
+                      Каталог
+                    </Button>
+                  </Link>
+                 
+                  <TextField id="filled-basic" color="success" label='Поиск' variant="filled"
+                   sx={{ flexBasis: '25%', marginRight: 3 }}
+                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
                         <SearchIcon />
@@ -55,23 +56,21 @@ function Header(){
                     ),
                   }}/>
                   
-                  <IconButton 
-                  color='inherit'
-                  >
+                  <IconButton sx={{marginRight: 1}}
+                  color='inherit'>
                     <ShoppingBasket />
                   </IconButton>
-                  <IconButton 
+
+                  <IconButton sx={{marginRight: 1}}
                   style={{ color: colors }} onClick={handleClick}
                   color='inherit'
                   
                   >
                     <FavoriteIcon />
                   </IconButton>
-                  <IconButton 
-                  color='inherit'
-                  >
-                    <PersonIcon />
-                  </IconButton>
+                  
+                  <Sign />
+                  
                   
             </Toolbar>
           

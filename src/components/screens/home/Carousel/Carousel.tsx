@@ -4,29 +4,32 @@ import { items } from './CarouselData'
 
 const MyCarousel = () => {
   const responsive = {
+    superLargeDesktop: {
+      
+      breakpoint: { max: 3000, min: 1600 },
+      items: 6
+    },
     desktop: {
-      breakpoint: { max: 3000, min: 1300 },
-      items: 4,
-    
+      breakpoint: { max: 1600, min: 1224 },
+      items: 4
     },
     tablet: {
-      breakpoint: { max: 1300, min: 464 },
-      items: 3,
-     
+      breakpoint: { max: 1224, min: 464 },
+      items: 3
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1,
+      items: 1
     },
   };
 
   return (
-    <div style={{ maxWidth: '55%', margin: '0 auto' }}>
+    <div style={{ maxWidth: '60%', margin: '0 auto' }}>
     <Carousel
       responsive={responsive}
       infinite={true}
-      autoPlay={true}
-      autoPlaySpeed={9000}
+      autoPlay={false}
+      // autoPlaySpeed={11000}
       // itemClass={{ style.item}}
       // containerClass=  {style.carousel}
       showDots={false}
@@ -34,7 +37,7 @@ const MyCarousel = () => {
       slidesToSlide={1}
       swipeable
       keyBoardControl
-      minimumTouchDrag={80}
+      minimumTouchDrag={1}
       renderButtonGroupOutside={false}
       renderDotsOutside
       centerMode={false}
@@ -44,7 +47,7 @@ const MyCarousel = () => {
       arrows>
       {items.map((item, index) => (
         <div key={index} style={{marginBottom: 30, width: 100}}>
-          <img src={item.image} alt={item.name} style={{ width: 210, height: 210, borderRadius: 16 }}/>
+          <img src={item.image} alt={item.name} style={{ width: 170, height: 170, borderRadius: 16 }}/>
           
         </div>
       ))}
