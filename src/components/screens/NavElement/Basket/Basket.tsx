@@ -1,17 +1,24 @@
 import { DialogContentText, Typography, Box, Chip, Divider, IconButton, Grid, Paper, Card, CardActionArea, CardContent  } from '@mui/material';
 import ShoppingBasket from '@mui/icons-material/ShoppingBasket';
 import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
-import React from 'react';
+import * as React from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import { experimentalStyled as styled } from '@mui/material/styles';
 import Dialog, { DialogProps } from '@mui/material/Dialog';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
+
 
 
 function Basket() {
     const [open, setOpen] = React.useState(false);
+    const [fullWidth, setFullWidth] = React.useState(true);
+    const [maxWidth, setMaxWidth] = React.useState<DialogProps['maxWidth']>('lg');
+
+
+ 
+      
+    
+
+
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -21,7 +28,7 @@ function Basket() {
       const handleClose = () => {
         setOpen(false);
       };
-      const [maxWidth, setMaxWidth] = React.useState<DialogProps['maxWidth']>('sm');
+      
     return (
         <React.Fragment>
             <IconButton sx={{marginRight: 1}}
@@ -30,9 +37,10 @@ function Basket() {
                     <ShoppingBasket />
             </IconButton>
             <Dialog 
-            open={open} 
-            onClose={handleClose}
-            maxWidth={maxWidth}
+              open={open} 
+              onClose={handleClose}
+              fullWidth={fullWidth}
+              maxWidth={maxWidth}
             >
 
                 <Box>
@@ -48,7 +56,7 @@ function Basket() {
                             </IconButton>
                     </Box>
                     <Divider variant="middle" flexItem sx={{ marginTop: 3, marginBottom: 5}} />
-                    <Box>
+                    <Box >
                         <Grid sx={{ flexGrow: 1 }} container justifyContent="center">
                             <Grid item xs={1}>
                     
