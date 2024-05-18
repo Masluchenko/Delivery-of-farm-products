@@ -7,14 +7,15 @@ import PersonIcon from '@mui/icons-material/Person';
 import ShoppingBasket from '@mui/icons-material/ShoppingBasket';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from "react-router-dom";
-import  Sign  from '../SignUp/Sign';
+import  Sign  from '../NavElement/SignUpIn/Sign';
+import Basket from '../NavElement/Basket/Basket';
 
 
 
 
 function Header(){
   const [colorsFavorit, setColorsFavorit] = useState('inherit');
-  const [colorsBasket, setColorsBasket] = useState('inherit');
+  // const [colorsBasket, setColorsBasket] = useState('inherit');
 
   const handleClick = () => {
     setColorsFavorit('red');
@@ -22,12 +23,12 @@ function Header(){
       setColorsFavorit('inherit');
     }, 1000);
   }
-  const BasketClick = () => {
-    setColorsBasket('green');
-    setTimeout(() => {
-      setColorsBasket('black');
-    }, 1000);
-  }
+  // const BasketClick = () => {
+  //   setColorsBasket('green');
+  //   setTimeout(() => {
+  //     setColorsBasket('black');
+  //   }, 1000);
+  // }
 
   return (
         <AppBar 
@@ -63,14 +64,8 @@ function Header(){
                       </InputAdornment>
                     ),
                   }}/>
-                  
-                  <Link to="/Basket">
-                    <IconButton sx={{marginRight: 1}}
-                      style={{ color: colorsBasket }} onClick={BasketClick}
-                      color='inherit'>
-                        <ShoppingBasket />
-                    </IconButton>
-                  </Link>
+
+                  <Basket />
 
                   <IconButton sx={{marginRight: 1}}
                     style={{ color: colorsFavorit }} onClick={handleClick}
