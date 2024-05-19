@@ -1,4 +1,4 @@
-import { DialogContentText, Typography, Box, Chip, Divider, IconButton, Grid, CardMedia, Card, CardActionArea, CardContent, Paper  } from '@mui/material';
+import { DialogContentText, Typography, Box, Chip, Divider, IconButton, Grid, CardMedia, Card, DialogActions, CardContent, Paper, Button  } from '@mui/material';
 import ShoppingBasket from '@mui/icons-material/ShoppingBasket';
 import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
 import * as React from 'react';
@@ -18,13 +18,10 @@ function Basket() {
     const [maxWidth, setMaxWidth] = React.useState<DialogProps['maxWidth']>('lg');
     const [scroll, setScroll] = React.useState<DialogProps['scroll']>('paper');
 
-    
-    
       const handleClose = () => {
         setOpen(false);
       };
       
-
       const handleClickOpen = (scrollType: DialogProps['scroll']) => () => {
         setOpen(true);
         setScroll(scrollType);
@@ -35,7 +32,7 @@ function Basket() {
             <IconButton sx={{marginRight: 1}}
                 onClick={handleClickOpen('body')}
                 color='inherit'>
-                    <ShoppingBasket />
+                <ShoppingBasket />
             </IconButton>
             <Dialog 
               open={open} 
@@ -44,10 +41,8 @@ function Basket() {
               maxWidth={maxWidth}
               scroll={scroll}
             >
-
                 <Box>
-                    <Box display="flex" justifyContent="space-between">
-                    
+                    <Box display="flex" justifyContent="space-between">        
                         <DialogContentText variant="h4" sx={{margin: 3}} >Корзина</DialogContentText>
                         <Chip 
                             icon={<ProductionQuantityLimitsIcon />} 
@@ -58,68 +53,87 @@ function Basket() {
                             </IconButton>
                     </Box>
                     <Divider variant="middle" flexItem sx={{ marginTop: 1, marginBottom: 1}} />
-                    <Box >
-                           
+                    <Box display="flex">
+                        <Box flexBasis='70%'> 
                             {items.map((items, index) => (
                                 <Grid key={index} item >
-                                    
-                                        <Paper sx={{margin: 1,}} >
-                                            <Card >
-                                                <Box display="flex" justifyContent="space-between">
-                                                    <Box display="flex">
-                                                        <CardMedia 
+                                    <Paper sx={{margin: 1,}} >
+                                        <Card >
+                                            <Box display="flex" justifyContent="space-between">
+                                                <Box display="flex">
+                                                    <CardMedia 
                                                         component="img"
                                                         height="300"
-                                                        
                                                         image={items.image}
                                                         sx={{
                                                             width: 150,
                                                             height: 150,
                                                             borderRadius: 8,
                                                             margin: 1}}
-                                                        />
-                                                    
-                                                        <Box>
+                                                    />
+                                                    <Box>
                                                         <CardContent>
-                                                            <Typography variant='subtitle1'
-                                                            >{items.name}</Typography>
-
+                                                            <Typography variant='subtitle1'>{items.name}</Typography>
                                                             <Box display="flex" >
-
-                                                            <Typography variant='h5'
-                                                            >{items.price}₽</Typography>
-
-                                                            <Typography variant='subtitle1'
-                                                            // sx={{marginTop: 1}}
-                                                            >/ {gramOrKilogram(items.weight)}</Typography>
-
-                                                            
-                                                            
-
+                                                                <Typography variant='h5'>{items.price}₽</Typography>
+                                                                <Typography variant='subtitle1'>/ {gramOrKilogram(items.weight)}</Typography>
                                                             </Box>
                                                         </CardContent>
-
-
-                                                        </Box>
+                                                    </Box>
+                                                </Box>
+                                                <Box  display="flex" > 
+                                                    <Box display="flex" alignItems='center' >
+                                                        <IconButton sx={{margin: 1 }}><RemoveIcon /></IconButton>
+                                                        <Typography sx={{margin: 1 }}> 1 </Typography>
+                                                        
+                                                        <IconButton sx={{margin: 1 }}>< AddIcon/></IconButton>
                                                     </Box>
                                                     
-                                                        <IconButton><RemoveIcon /></IconButton>
-                                                        
-                                                         <IconButton>< AddIcon/></IconButton>
-
-                                                    
-
-                                                <IconButton sx={{margin: 4, borderRadius: '50%', }}>
-                                                    <DeleteIcon  />
-                                                </IconButton>
+                                                    <IconButton sx={{margin: 4 }}>
+                                                        <DeleteIcon  />
+                                                    </IconButton>
                                                 </Box>
 
-                                              </Card>
-                                        </Paper>
-                                    
+                                            </Box>
+
+                                        </Card>
+                                    </Paper> 
                                 </Grid>    
-                                ))}
-                        
+                            ))}
+                        </Box>
+                        <Divider orientation="vertical" variant="middle" flexItem sx={{ marginLeft: 0, marginRight: 2}} />
+                        <Box >
+                            <Box  display="flex" justifyContent="space-between">
+                                <Typography >Кол-во товаров</Typography>
+                                <Typography sx={{marginRight: 2}}>4</Typography>
+                            </Box>
+                            <Box  display="flex" justifyContent="space-between" sx={{marginTop: 2}}>
+                                <Typography variant="h6" >Вес посылки</Typography>
+                                <Typography variant="h6" sx={{marginRight: 2}}>2.04</Typography>
+                            </Box>
+                            <Box  display="flex" justifyContent="space-between" sx={{marginTop: 2}}>
+                                <Typography variant="h6" >Стоимость продуктов</Typography>
+                                <Typography variant="h6" sx={{marginRight: 2}}>2562</Typography>
+                            </Box>
+
+                            <Box 
+                             display="flex"
+                             height='80%'
+                             flexWrap='wrap'
+                             alignContent='space-between'
+                             justifyContent="center"
+                            >
+                                <DialogActions sx={{marginTop: 2}}>
+                                    <Button color='success' variant="contained" size="large" type="submit" sx={{width: 300}}>Оформить заказ</Button>
+                                </DialogActions>
+                                <Button color="inherit" sx={{display:'flex', justifyContent:'center'}} startIcon={<DeleteIcon />}>
+                                    Очистить
+                                </Button>
+                            </Box>
+
+                            
+
+                        </Box>     
                     </Box>
                 </Box>
             </Dialog>
