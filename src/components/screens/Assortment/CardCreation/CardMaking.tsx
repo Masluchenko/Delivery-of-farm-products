@@ -15,9 +15,6 @@ export function gramOrKilogram(gk: number): string{
 
     }
 export function cardMaking(obj: CardItems[]) {
-
-     
-
     return (
         <Grid sx={{ flexGrow: 1 }} container justifyContent='center'>
           <Grid item xs={7}>

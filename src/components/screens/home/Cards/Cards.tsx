@@ -7,9 +7,14 @@ const Cards: React.FC = () => {
 
     return (
       <Box >
-      <Typography variant="h4"
-       display="flex" justifyContent="center"
-       sx={{marginBottom: 2}}>Наш ассортимент</Typography>
+      <Typography 
+       variant="h4"
+       display="flex"
+       justifyContent="center"
+       sx={{marginBottom: 2}}
+      >
+        Наш ассортимент
+      </Typography>
         <Grid sx={{ flexGrow: 1 }} container justifyContent="center">
           <Grid item xs={8}>
             

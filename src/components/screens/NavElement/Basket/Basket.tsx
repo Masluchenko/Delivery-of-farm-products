@@ -45,9 +45,10 @@ function Basket() {
                     <Box display="flex" justifyContent="space-between">        
                         <DialogContentText variant="h4" sx={{margin: 3}} >Корзина</DialogContentText>
                         <Chip 
-                            icon={<ProductionQuantityLimitsIcon />} 
-                            label='Минимальная сумма заказа 900р' 
-                            sx={{margin: 3}} />
+                         icon={<ProductionQuantityLimitsIcon />} 
+                         label='Минимальная сумма заказа 900р' 
+                         sx={{margin: 3}} 
+                        />
                             <IconButton onClick={handleClose} sx={{margin: 2}}>
                                 <CloseIcon />
                             </IconButton>
@@ -101,7 +102,11 @@ function Basket() {
                                 </Grid>    
                             ))}
                         </Box>
-                        <Divider orientation="vertical" variant="middle" flexItem sx={{ marginLeft: 0, marginRight: 2}} />
+                        <Divider 
+                         orientation="vertical"
+                         variant="middle" 
+                         flexItem 
+                         sx={{ marginLeft: 0, marginRight: 2}} />
                         <Box >
                             <Box  display="flex" justifyContent="space-between">
                                 <Typography >Кол-во товаров</Typography>

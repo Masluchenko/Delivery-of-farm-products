@@ -83,37 +83,37 @@ export default function FormDialog() {
 
 
         <Dialog open={openFirst}>
-        <Box display='flex' justifyContent='space-between'>
-        <DialogTitle>Авторизация</DialogTitle>
-        <IconButton onClick={handleClose}>
-            <CloseIcon />
-        </IconButton>
-        </Box>
-        <DialogContent>
-            <DialogContentText>Введите номер телефона, чтобы войти, либо зарегистрироваться, если у вас нет аккаунта.</DialogContentText>
-        
-        <Stack  justifyContent='center' m={4}>
-            <FormControl variant="outlined">
-                <InputLabel id="outlined-basic" color='success' htmlFor="outlined-basic">Ваш телефон</InputLabel>
-                <Input
-                color='success'
-                value={values.textmask}
-                onChange={handleChange}
-                name="textmask"
-                id="outlined-basic"
-                inputComponent={TextMaskCustom as any}
-                />
-            </FormControl>
-        </Stack>
-        </DialogContent>
+          <Box display='flex' justifyContent='space-between'>
+            <DialogTitle>Авторизация</DialogTitle>
+            <IconButton onClick={handleClose}>
+                <CloseIcon />
+            </IconButton>
+          </Box>
+          <DialogContent>
+              <DialogContentText>Введите номер телефона, чтобы войти, либо зарегистрироваться, если у вас нет аккаунта.</DialogContentText>
+          
+          <Stack  justifyContent='center' m={4}>
+              <FormControl variant="outlined">
+                  <InputLabel id="outlined-basic" color='success' htmlFor="outlined-basic">Ваш телефон</InputLabel>
+                  <Input
+                  color='success'
+                  value={values.textmask}
+                  onChange={handleChange}
+                  name="textmask"
+                  id="outlined-basic"
+                  inputComponent={TextMaskCustom as any}
+                  />
+              </FormControl>
+          </Stack>
+          </DialogContent>
 
-        <DialogActions sx={{display:'flex', justifyContent:'center'}}>
-          <Button color='success' variant="contained" size="large" type="submit" sx={{width: 300}}>Продолжить</Button>
-        </DialogActions>
-        <DialogActions sx={{display:'flex', justifyContent:'center'}}>
-            <Button variant="outlined" size="large" onClick={handleClickOpenSecond} sx={{width: 300}}>Войти по почте</Button>
-        </DialogActions>
-        
+          <DialogActions sx={{display:'flex', justifyContent:'center'}}>
+            <Button color='success' variant="contained" size="large" type="submit" sx={{width: 300}}>Продолжить</Button>
+          </DialogActions>
+          <DialogActions sx={{display:'flex', justifyContent:'center'}}>
+              <Button color="primary" variant="outlined" size="large" onClick={handleClickOpenSecond} sx={{width: 300}}>Войти по почте</Button>
+          </DialogActions>
+          
 
         </Dialog>
 
@@ -173,7 +173,7 @@ export default function FormDialog() {
           <Button color='success' variant="contained" size="large" type="submit" sx={{width: 300}}>Продолжить</Button>
         </DialogActions>
         <DialogActions sx={{display:'flex', justifyContent:'center'}}>
-            <Button variant="outlined" size="large" onClick={handleClickOpenFirst} sx={{width: 300}}>Войти по номеру телефона</Button>
+            <Button color="primary" variant="outlined" size="large" onClick={handleClickOpenFirst} sx={{width: 300}}>Войти по номеру телефона</Button>
         </DialogActions>
       </Dialog>
       

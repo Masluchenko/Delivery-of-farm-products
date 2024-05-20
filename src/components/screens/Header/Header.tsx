@@ -1,35 +1,12 @@
-import * as React from 'react';
-import { useState } from 'react';
-import { Typography, Toolbar, AppBar, IconButton, TextField, InputAdornment, Button } from '@mui/material';
+import { Typography, Toolbar, AppBar, TextField, InputAdornment, Button } from '@mui/material';
 import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import PersonIcon from '@mui/icons-material/Person';
-import ShoppingBasket from '@mui/icons-material/ShoppingBasket';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from "react-router-dom";
 import  Sign  from '../NavElement/SignUpIn/Sign';
 import Basket from '../NavElement/Basket/Basket';
-
-
-
+import Favorite from '../NavElement/Likes/Favorite';
 
 function Header(){
-  const [colorsFavorit, setColorsFavorit] = useState('inherit');
-  // const [colorsBasket, setColorsBasket] = useState('inherit');
-
-  const handleClick = () => {
-    setColorsFavorit('red');
-    setTimeout(() => {
-      setColorsFavorit('inherit');
-    }, 1000);
-  }
-  // const BasketClick = () => {
-  //   setColorsBasket('green');
-  //   setTimeout(() => {
-  //     setColorsBasket('black');
-  //   }, 1000);
-  // }
-
   return (
         <AppBar 
         position='static'
@@ -66,20 +43,11 @@ function Header(){
                   }}/>
 
                   <Basket />
-
-                  <IconButton sx={{marginRight: 1}}
-                    style={{ color: colorsFavorit }} onClick={handleClick}
-                    color='inherit'>
-                      <FavoriteIcon />
-                  </IconButton>
-                  
+                  <Favorite />
                   <Sign />
                   
-                  
             </Toolbar>
-          
         </AppBar>
-        
   );
 }
 export default Header;
