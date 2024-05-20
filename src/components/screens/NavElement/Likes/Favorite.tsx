@@ -71,16 +71,12 @@ function Favorite() {
                                                             borderRadius: 4,
                                                             }}
                                                     />                                
-                                                    <Box m={1}>
-                                                        
-                                                        <Typography variant='subtitle1'>{items.name}</Typography>
-                                                            
-                                                        
+                                                    <Box m={1}>                
+                                                        <Typography variant='subtitle1'>{items.name}</Typography>                                        
                                                     </Box>
                                                 </Box>
-
                                                 <Box>
-                                                    <Box display="flex" >
+                                                    <Box display="flex" sx={{marginLeft: 1}} >
                                                         <Typography variant='h5'>{items.price}₽</Typography>
                                                         <Typography variant='subtitle1'>/ {gramOrKilogram(items.weight)}</Typography>
                                                     </Box>
@@ -89,17 +85,11 @@ function Favorite() {
                                                     justifyContent="space-between"
                                                     width='100%' 
                                                     >
-                                                        
                                                         <IconButton color ='error' sx={{marginLeft: 1 }}><FavoriteIcon /></IconButton>
                                                         <IconButton sx={{marginRight: 1 }}><ShoppingBasketIcon/></IconButton>
                                                     </Box>
-
-
                                                 </Box>
-                                                    
-                                               
                                             </Box>
-                                        
                                     </Card>
                                 </Paper>
                             </Grid>
