@@ -60,7 +60,7 @@ function Favorite() {
                                 <Paper sx={{margin: 1,}} >
                                     <Card >
                                         
-                                            <Box display="flex" flexWrap='wrap' alignContent='space-between' sx={{width:200, height: 380}}>
+                                            <Box display="flex" flexWrap='wrap' alignContent='space-between' sx={{width:200, height: 350}}>
                                                 <Box>
                                                     <CardMedia 
                                                         component="img"
@@ -71,24 +71,32 @@ function Favorite() {
                                                             borderRadius: 4,
                                                             }}
                                                     />                                
-                                                    <Box >
-                                                        <CardContent>
-                                                            <Typography variant='subtitle1'>{items.name}</Typography>
-                                                            <Box display="flex" >
-                                                                <Typography variant='h5'>{items.price}₽</Typography>
-                                                                <Typography variant='subtitle1'>/ {gramOrKilogram(items.weight)}</Typography>
-                                                            </Box>
-                                                        </CardContent>
+                                                    <Box m={1}>
+                                                        
+                                                        <Typography variant='subtitle1'>{items.name}</Typography>
+                                                            
+                                                        
                                                     </Box>
                                                 </Box>
+
+                                                <Box>
+                                                    <Box display="flex" >
+                                                        <Typography variant='h5'>{items.price}₽</Typography>
+                                                        <Typography variant='subtitle1'>/ {gramOrKilogram(items.weight)}</Typography>
+                                                    </Box>
                                                     <Box
                                                     display="flex" 
                                                     justifyContent="space-between"
                                                     width='100%' 
                                                     >
+                                                        
                                                         <IconButton color ='error' sx={{marginLeft: 1 }}><FavoriteIcon /></IconButton>
                                                         <IconButton sx={{marginRight: 1 }}><ShoppingBasketIcon/></IconButton>
                                                     </Box>
+
+
+                                                </Box>
+                                                    
                                                
                                             </Box>
                                         
