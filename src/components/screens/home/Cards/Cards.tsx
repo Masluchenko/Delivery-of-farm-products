@@ -15,10 +15,10 @@ const Cards: React.FC = () => {
       >
         Наш ассортимент
       </Typography>
-        <Grid sx={{ flexGrow: 1 }} container justifyContent="center">
-          <Grid item xs={8}>
+        <Grid  container justifyContent="center">
+          <Grid item xs={10}>
             
-            <Grid container justifyContent="center" spacing={2}>
+            <Grid container justifyContent="center" spacing={1.5}>
               {range.map((range, index) => (
                 <Grid key={index} item>
                   <CardActionArea>

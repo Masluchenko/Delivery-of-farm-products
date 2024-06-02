@@ -36,7 +36,8 @@ function Favorite() {
         <React.Fragment>
             <IconButton 
              sx={{marginRight: 1}}
-             style={{ color: colorsFavorit }} onClick={handleClickOpen('body')}
+             style={{ color: colorsFavorit }}
+             onClick={handleClickOpen('body')}
              color='inherit'>
                 <FavoriteIcon />
             </IconButton>
@@ -46,7 +47,10 @@ function Favorite() {
               fullWidth={fullWidth}
               maxWidth={maxWidth}
               scroll={scroll}>
-                <Box display='flex' justifyContent='space-between' >
+                <Box
+                display='flex'
+                justifyContent='space-between'
+                >
                     <DialogTitle>Понравившееся</DialogTitle>
                     <IconButton onClick={handleClose}>
                         <CloseIcon/>
@@ -59,37 +63,49 @@ function Favorite() {
                             <Grid key={index} item >
                                 <Paper sx={{margin: 1,}} >
                                     <Card >
-                                        
-                                            <Box display="flex" flexWrap='wrap' alignContent='space-between' sx={{width:200, height: 350}}>
-                                                <Box>
-                                                    <CardMedia 
-                                                        component="img"
-                                                        image={items.image}
-                                                        sx={{
-                                                            width: 200,
-                                                            height: 200,
-                                                            borderRadius: 4,
-                                                            }}
-                                                    />                                
-                                                    <Box m={1}>                
-                                                        <Typography variant='subtitle1'>{items.name}</Typography>                                        
-                                                    </Box>
-                                                </Box>
-                                                <Box>
-                                                    <Box display="flex" sx={{marginLeft: 1}} >
-                                                        <Typography variant='h5'>{items.price}₽</Typography>
-                                                        <Typography variant='subtitle1'>/ {gramOrKilogram(items.weight)}</Typography>
-                                                    </Box>
-                                                    <Box
-                                                    display="flex" 
-                                                    justifyContent="space-between"
-                                                    width='100%' 
-                                                    >
-                                                        <IconButton color ='error' sx={{marginLeft: 1 }}><FavoriteIcon /></IconButton>
-                                                        <IconButton sx={{marginRight: 1 }}><ShoppingBasketIcon/></IconButton>
-                                                    </Box>
+                                        <Box 
+                                        display="flex" 
+                                        flexWrap='wrap' 
+                                        alignContent='space-between' 
+                                        sx={{width:200, height: 350}}>
+                                            <Box>
+                                                <CardMedia 
+                                                    component="img"
+                                                    image={items.image}
+                                                    sx={{
+                                                        width: 200,
+                                                        height: 200,
+                                                        borderRadius: 4,
+                                                        }}
+                                                />                                
+                                                <Box m={1}>                
+                                                    <Typography variant='subtitle1'>{items.name}</Typography>                                        
                                                 </Box>
                                             </Box>
+                                            <Box>
+                                                <Box display="flex" sx={{marginLeft: 1}}>
+                                                    <Typography variant='h5'>{items.price}₽</Typography>
+                                                    <Typography variant='subtitle1'>/ {gramOrKilogram(items.weight)}</Typography>
+                                                </Box>
+                                                <Box
+                                                display="flex" 
+                                                justifyContent="space-between"
+                                                width='100%' 
+                                                >
+                                                    <IconButton
+                                                    color ='error'
+                                                    sx={{marginLeft: 1 }}
+                                                    >
+                                                        <FavoriteIcon />
+                                                    </IconButton>
+                                                    <IconButton
+                                                    sx={{marginRight: 1 }}
+                                                    >
+                                                        <ShoppingBasketIcon/>
+                                                    </IconButton>
+                                                </Box>
+                                            </Box>
+                                        </Box>
                                     </Card>
                                 </Paper>
                             </Grid>
@@ -98,7 +114,6 @@ function Favorite() {
                 </Box>
             </Dialog>
         </React.Fragment>
-
     )
 }
 export default Favorite;

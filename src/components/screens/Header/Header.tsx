@@ -5,13 +5,17 @@ import { Link } from "react-router-dom";
 import  Sign  from '../NavElement/SignUpIn/Sign';
 import Basket from '../NavElement/Basket/Basket';
 import Favorite from '../NavElement/Likes/Favorite';
+import { createTheme } from '@mui/material/styles';
+
 
 function Header(){
+
   return (
         <AppBar 
-        position='static'
-        color='transparent'
-        sx={{ marginBottom: 5 }}>
+        
+        color= 'default'
+        position = 'sticky'
+        sx={{ marginBottom: 3, marginTop: 0}}>
             <Toolbar sx={{ justifyContent: 'center' }}> 
                   <Link to="/">
                   <Button variant="text" color="success" sx={{marginRight: 3}}>
@@ -23,7 +27,7 @@ function Header(){
                   </Button>
                   </Link>
 
-                  <Link to="/Cards">
+                  <Link to="/CreateCatalog">
                     <Button variant="contained"
                      color='success'
                      sx={{marginRight: 3}}
