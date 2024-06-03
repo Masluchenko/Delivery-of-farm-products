@@ -1,21 +1,20 @@
 import { Box, Grid, Button } from '@mui/material/';
 import { Link } from "react-router-dom";
-import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
-import Cards from '../../Home/Cards/Cards'
+
 import Panel from './SideBar/Panel'
-function CreateCatalog() {
+
+import { Outlet } from 'react-router-dom';
+
+export default function CreateCatalog() {
     return(
-        <Box sx={{ display: 'flex' }}>
-            <Box sx={{margin:2, marginTop: 0}}>
+        <Box sx={{ display: 'flex', justifyCentent: 'center'}}>
+            <Box sx={{ margin:2, marginTop: 0, marginRight: 0 ,width: 300}}>
                 <Panel />
             </Box>
         
-            <Box sx={{justifyContent: ''}}>
-                <Cards />
+            <Box sx={{width: '90%'}}>
+                <Outlet />
             </Box>
         </Box>
-
-
     );
 }
-export default CreateCatalog;

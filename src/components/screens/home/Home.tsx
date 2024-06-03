@@ -2,16 +2,18 @@
 import Cards from './Cards/Cards'
 import MyCarousel from './Carousel/Carousel'
 import MultipleItems from './BigCarousel/Slice'
-
+import { Box} from '@mui/material/';
 
 function Home(){
     return(
-        <>
+        <Box >
             
             <MyCarousel />
             <MultipleItems />
-            <Cards />
-        </>
+            <Box  sx={{width:'70%', display:"flex", justifyContent:"center"}}>
+                <Cards />
+            </Box>
+        </Box>
     )
 }
 

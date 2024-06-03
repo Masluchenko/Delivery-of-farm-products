@@ -1,44 +1,47 @@
 import React from 'react'
 import { range } from './assortment.ts'
-import { Grid, Card, CardContent, Typography, CardActionArea, Box} from '@mui/material/';
-
+import { Card, CardContent, Typography, CardActionArea, Box} from '@mui/material/';
+import Grid from '@mui/material/Unstable_Grid2';
 
 const Cards: React.FC = () => {
 
     return (
-      <Box >
-      <Typography 
-       variant="h4"
-       display="flex"
-       justifyContent="center"
-       sx={{marginBottom: 2}}
-      >
-        Наш ассортимент
-      </Typography>
-        <Grid  container justifyContent="center">
-          <Grid item xs={10}>
-            
-            <Grid container justifyContent="center" spacing={1.5}>
-              {range.map((range, index) => (
-                <Grid key={index} item>
-                  <CardActionArea>
-                    <Card style={{ backgroundImage: `url(${range.image})`,
-                      backgroundSize: 'cover',
-                      width: 270,
-                      height: 270,
-                      color: 'white',
-                      borderRadius: 16 }}>
-                      <CardContent>
-                      <Typography variant="h6">{range.name}</Typography>
-                      </CardContent>
-                    </Card>
-                  </CardActionArea>
-                </Grid> 
-              ))}
-            </Grid>
-          </Grid>
-       </Grid>
-       </Box>
+      
+      // <Typography> 
+      //  variant="h4"
+      //  display="flex"
+      //  justifyContent="center"
+      //  sx={{marginBottom: 2}}
+      // >
+      //   Наш ассортимент
+      // </Typography>
+        
+          
+      <Box sx={{  marginLeft: 1}}>     
+        <Grid container spacing={1}>
+          {range.map((range, index) => (
+            <Grid  key={index} p={1}  display="flex" justifyContent="center" alignItems="center">
+              <Box sx={{ borderRadius: 4, width: 270}}>
+                <CardActionArea>
+                  <Card style={{ backgroundImage: `url(${range.image})`,
+                    backgroundSize: 'cover',
+                    width: 270,
+                    height: 270,
+                    color: 'white',
+                    borderRadius: 16 }}>
+                    <CardContent>
+                    <Typography variant="h6">{range.name}</Typography>
+                    </CardContent>
+                  </Card>
+                </CardActionArea>
+              </Box>
+            </Grid> 
+          ))}
+        </Grid>
+          
+       
+      </Box>
+      
     );
   };
   

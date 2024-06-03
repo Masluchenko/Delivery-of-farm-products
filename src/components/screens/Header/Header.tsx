@@ -30,7 +30,16 @@ function Header(){
                   <Link to="/CreateCatalog">
                     <Button variant="contained"
                      color='success'
-                     sx={{marginRight: 3}}
+                     sx={{
+                      marginRight: 3,
+                      fontSize: '15px',
+                      transition: 'color 0.4s ease',
+                       '&:hover': {
+                        backgroundColor: '#d3e29d',
+                        color: 'black',
+                        
+                      
+                    },}}
                      startIcon={<GridViewRoundedIcon />}>
                       Каталог
                     </Button>
