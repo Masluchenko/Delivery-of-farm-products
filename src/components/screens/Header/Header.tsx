@@ -1,4 +1,4 @@
-import { Typography, Toolbar, AppBar, TextField, InputAdornment, Button } from '@mui/material';
+import { Typography, Toolbar, AppBar, TextField, InputAdornment, Button, Box } from '@mui/material';
 import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from "react-router-dom";
@@ -11,8 +11,9 @@ import { createTheme } from '@mui/material/styles';
 function Header(){
 
   return (
+    <Box sx={{ display: 'flex' }}>
         <AppBar 
-        
+        component="nav"
         color= 'default'
         position = 'sticky'
         sx={{ marginBottom: 3, marginTop: 0}}>
@@ -61,6 +62,7 @@ function Header(){
                   
             </Toolbar>
         </AppBar>
+        </Box>
   );
 }
 export default Header;

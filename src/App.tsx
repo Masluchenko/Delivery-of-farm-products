@@ -5,7 +5,11 @@ import Home from './components/screens/Home/Home';
 import CreateCatalog from './components/screens/Assortment/Сatalog/CreateСatalog'
 import { NotfoundPage } from './components/screens/Notfound/NotfoundPage';
 import Cards from './components/screens/Home/Cards/Cards';
-import { Layout } from './components/Layout'
+import CreateChees from './components/screens/Assortment/Сatalog/Food/CreateChees';
+import { Layout } from './components/Layout';
+
+import DialogFlex from './components/screens/Assortment/Сatalog/CreateCard/Cardinfo';
+
 
 export function App() {
     return (
@@ -15,9 +19,8 @@ export function App() {
                     <Route index element={<Home />}/>
                     <Route path='CreateCatalog/' element={<CreateCatalog />}>
                         <Route index element={<Cards />}/>
-                        <Route path='Milk' element={<h1>milksssssssssssssssss</h1>} />
-                        <Route path='Meat' element={<Home />} />
-                        <Route path='Chees' element={<h3>CHEEEEEESSS</h3>} />
+                        <Route path='Content' element={<DialogFlex />}/>
+                        <Route path='Chees' element={<CreateChees />} />
                     </Route> 
 
                     {/* <Route path='/Cards' element={<Cards />}/> */}

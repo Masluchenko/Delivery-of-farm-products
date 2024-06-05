@@ -110,7 +110,7 @@ export default function FormDialog() {
           <DialogActions sx={{display:'flex', justifyContent:'center'}}>
             <Button color='success' variant="contained" size="large" type="submit" sx={{width: 300}}>Продолжить</Button>
           </DialogActions>
-          <DialogActions sx={{display:'flex', justifyContent:'center'}}>
+          <DialogActions sx={{display:'flex', justifyContent:'center', marginBottom: 2}}>
               <Button color="primary" variant="outlined" size="large" onClick={handleClickOpenSecond} sx={{width: 300}}>Войти по почте</Button>
           </DialogActions>
           
@@ -172,7 +172,7 @@ export default function FormDialog() {
           
           <Button color='success' variant="contained" size="large" type="submit" sx={{width: 300}}>Продолжить</Button>
         </DialogActions>
-        <DialogActions sx={{display:'flex', justifyContent:'center'}}>
+        <DialogActions sx={{display:'flex', justifyContent:'center', marginBottom: 2}}>
             <Button color="primary" variant="outlined" size="large" onClick={handleClickOpenFirst} sx={{width: 300}}>Войти по номеру телефона</Button>
         </DialogActions>
       </Dialog>

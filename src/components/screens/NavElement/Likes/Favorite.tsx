@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Typography, Box, IconButton, Dialog, DialogTitle, Divider, CardContent, Paper, Grid, CardMedia, Card   } from '@mui/material';
+import { Typography, Box, IconButton, Dialog, DialogTitle, Divider, Paper, Grid, CardMedia, Card   } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { DialogProps } from '@mui/material/Dialog';
 import CloseIcon from '@mui/icons-material/Close';
@@ -19,14 +19,7 @@ function Favorite() {
       };
       
       const handleClickOpen = (scrollType: DialogProps['scroll']) => () => {
-        
-         () => {
-            setColorsFavorit('red');
-            setTimeout(() => {
-              setColorsFavorit('inherit');
-            }, 1000);
-          }
-          setOpen(true);
+        setOpen(true);
         setScroll(scrollType);
       };
 
@@ -50,14 +43,15 @@ function Favorite() {
                 <Box
                 display='flex'
                 justifyContent='space-between'
+                
                 >
-                    <DialogTitle>Понравившееся</DialogTitle>
+                    <DialogTitle>Likes</DialogTitle>
                     <IconButton onClick={handleClose}>
                         <CloseIcon/>
                     </IconButton>
                 </Box>
                 <Divider variant="middle" flexItem sx={{ marginTop: 1, marginBottom: 1}} />
-                <Box display="flex">
+                <Box display="flex" sx={{marginBottom: 5, marginTop: 3}}>
                     <Grid container justifyContent="center" spacing={1}>    
                         {items.map((items, index) => (
                             <Grid key={index} item >
@@ -90,7 +84,8 @@ function Favorite() {
                                                 <Box
                                                 display="flex" 
                                                 justifyContent="space-between"
-                                                width='100%' 
+                                                width='165%'
+                                                sx={{marginBottom: 1}} 
                                                 >
                                                     <IconButton
                                                     color ='error'
