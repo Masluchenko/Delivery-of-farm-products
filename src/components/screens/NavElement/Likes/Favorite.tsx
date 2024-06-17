@@ -45,7 +45,7 @@ function Favorite() {
                 justifyContent='space-between'
                 
                 >
-                    <DialogTitle>Likes</DialogTitle>
+                    <DialogTitle>Избранное</DialogTitle>
                     <IconButton onClick={handleClose}>
                         <CloseIcon/>
                     </IconButton>

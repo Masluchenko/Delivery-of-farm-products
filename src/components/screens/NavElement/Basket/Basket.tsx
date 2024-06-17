@@ -6,6 +6,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import { experimentalStyled as styled } from '@mui/material/styles';
 import Dialog, { DialogProps } from '@mui/material/Dialog';
 import DeleteIcon from '@mui/icons-material/Delete';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import Tooltip from '@mui/material/Tooltip';
 
 import { gramOrKilogram } from '../../Assortment/CardCreation/CardMaking'
 
@@ -40,13 +42,14 @@ function Basket() {
               fullWidth={fullWidth}
               maxWidth={maxWidth}
               scroll={scroll}
+              
             >
                 <Box>
                     <Box display="flex" justifyContent="space-between">        
                         <DialogContentText variant="h4" sx={{margin: 3}} >Корзина</DialogContentText>
                         <Chip 
                          icon={<ProductionQuantityLimitsIcon />} 
-                         label='Минимальная сумма заказа 900р' 
+                         label='Минимальная сумма заказа 900 ₽' 
                          sx={{margin: 3}} 
                         />
                             <IconButton onClick={handleClose} sx={{margin: 2}}>
@@ -55,7 +58,7 @@ function Basket() {
                     </Box>
                     <Divider variant="middle" flexItem sx={{ marginTop: 1, marginBottom: 1}} />
                     <Box display="flex">
-                        <Box flexBasis='70%'> 
+                        <Box flexBasis='70%' sx={{marginBottom: 3}}> 
                             {items.map((items, index) => (
                                 <Grid key={index} item >
                                     <Paper sx={{margin: 1,}} >
@@ -114,16 +117,33 @@ function Basket() {
                             </Box>
                             <Box  display="flex" justifyContent="space-between" sx={{marginTop: 2}}>
                                 <Typography variant="h6" >Вес посылки</Typography>
-                                <Typography variant="h6" sx={{marginRight: 2}}>2.04</Typography>
+                                <Typography variant="h6" sx={{marginRight: 2}}>2.04 кг</Typography>
                             </Box>
                             <Box  display="flex" justifyContent="space-between" sx={{marginTop: 2}}>
                                 <Typography variant="h6" >Стоимость продуктов</Typography>
-                                <Typography variant="h6" sx={{marginRight: 2}}>2562</Typography>
+                                <Typography variant="h6" sx={{marginRight: 2}}>2562 ₽</Typography>
+                            </Box>
+                            <Box  display="flex" justifyContent="space-between" sx={{marginTop: 2}}>
+                                <Box sx={{display: 'flex', alignItems: 'center'}}>
+                                    <Typography variant="h6" >Стоимость доставки</Typography>
+                                    <Tooltip title="Доставка 380 ₽, если добавить на 2438 ₽">
+                                        <IconButton>
+                                            <ErrorOutlineIcon/>
+                                        </IconButton>
+                                    </Tooltip>
+
+                                </Box>
+                                
+                                <Typography variant="h6" sx={{marginRight: 2}}>500 ₽</Typography>
+                            </Box>
+                            <Box  display="flex" justifyContent="space-between" sx={{marginTop: 2}}>
+                                <Typography variant="h6" >Итоговая стоимость</Typography>
+                                <Typography variant="h6" sx={{marginRight: 2}}>3062 ₽</Typography>
                             </Box>
 
                             <Box 
                              display="flex"
-                             height='80%'
+                             height='65%'
                              flexWrap='wrap'
                              alignContent='space-between'
                              justifyContent="center"

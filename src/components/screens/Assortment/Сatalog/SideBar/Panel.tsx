@@ -204,11 +204,11 @@ function Panel(){
 
         <Box sx={{display: 'flex'}}>
         
-          
+          <Link to='Chees' style={{ textDecoration: 'none', color: 'inherit', width: '100%' }} >
             <ListItemButton >
-                <Link to='Chees' style={{ textDecoration: 'none', color: 'inherit' }}><Box><ListItemText primary='Сыры' sx={{textDecoration:'none !important' , color: 'black' }} /></Box> </Link> 
+                <Box ><ListItemText primary='Сыры' sx={{textDecoration:'none !important' , color: 'black' }} /></Box> 
             </ListItemButton>
-          
+          </Link> 
             
 
           <Box sx={{display: 'flex', alignItems: 'center',}}>

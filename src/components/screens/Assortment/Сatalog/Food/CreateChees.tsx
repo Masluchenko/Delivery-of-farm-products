@@ -1,4 +1,4 @@
-import { Typography, Box, IconButton, Divider, CardContent, Paper, Grid, CardMedia, Card   } from '@mui/material';
+import { Typography, Box, IconButton, Divider, CardContent, Paper, Grid, CardMedia, Card, CardActionArea   } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { gramOrKilogram } from '../../CardCreation/CardMaking';
@@ -17,52 +17,60 @@ export default function CreateChees() {
                     {items.map((items, index) => (
                         <Grid key={index} item >
                             <Paper sx={{margin: 1,}} >
+                                
                                 <Card >
-                                    <Box 
-                                    display="flex" 
-                                    flexWrap='wrap' 
-                                    alignContent='space-between' 
-                                    sx={{width:200, height: 350}}>
-                                        <Box>
-                                            <CardMedia 
-                                                component="img"
-                                                image={items.image}
-                                                sx={{
-                                                    width: 200,
-                                                    height: 200,
-                                                    borderRadius: 4,
-                                                    }}
-                                            />                                
-                                            <Box m={1}>                
-                                                <Typography variant='subtitle1'>{items.name}</Typography>                                        
+                                    
+                                        <Box 
+                                        display="flex" 
+                                        flexWrap='wrap' 
+                                        alignContent='space-between' 
+                                        sx={{width:200, height: 350}}>
+                                            <Box>
+                                                <CardActionArea sx={{borderRadius: 2}}>
+                                                <CardMedia 
+                                                    component="img"
+                                                    image={items.image}
+                                                    sx={{
+                                                        width: 200,
+                                                        height: 200,
+                                                        borderRadius: 4,
+                                                        }}
+                                                />
+                                                </CardActionArea>                                
+                                                <Box m={1}>                
+                                                    <Typography variant='subtitle1'>{items.name}</Typography>                                        
+                                                </Box>
+                                                
+                                            </Box>
+                                            
+                                            <Box>
+                                                <Box display="flex" sx={{marginLeft: 1}}>
+                                                    <Typography variant='h5'>{items.price}₽</Typography>
+                                                    <Typography variant='subtitle1'>/ {gramOrKilogram(items.weight)}</Typography>
+                                                </Box>
+                                                
+                                                <Box
+                                                display="flex" 
+                                                justifyContent="space-between"
+                                                width='165%'
+                                                sx={{marginBottom: 1}} 
+                                                >
+                                                    <IconButton
+                                                    color = 'inherit'
+                                                    sx={{marginLeft: 1 }}
+                                                    >
+                                                        <FavoriteIcon />
+                                                    </IconButton>
+                                                    <IconButton
+                                                    sx={{marginRight: 1 }}
+                                                    >
+                                                        <ShoppingBasketIcon/>
+                                                    </IconButton>
+                                                </Box>
                                             </Box>
                                         </Box>
-                                        <Box>
-                                            <Box display="flex" sx={{marginLeft: 1}}>
-                                                <Typography variant='h5'>{items.price}₽</Typography>
-                                                <Typography variant='subtitle1'>/ {gramOrKilogram(items.weight)}</Typography>
-                                            </Box>
-                                            <Box
-                                            display="flex" 
-                                            justifyContent="space-between"
-                                            width='165%'
-                                            sx={{marginBottom: 1}} 
-                                            >
-                                                <IconButton
-                                                color = 'inherit'
-                                                sx={{marginLeft: 1 }}
-                                                >
-                                                    <FavoriteIcon />
-                                                </IconButton>
-                                                <IconButton
-                                                sx={{marginRight: 1 }}
-                                                >
-                                                    <ShoppingBasketIcon/>
-                                                </IconButton>
-                                            </Box>
-                                        </Box>
-                                    </Box>
                                 </Card>
+                                
                             </Paper>
                         </Grid>
                     ))}

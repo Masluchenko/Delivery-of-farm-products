@@ -6,7 +6,7 @@ import Grid from '@mui/material/Unstable_Grid2';
 const Cards: React.FC = () => {
 
     return (
-      <Box>
+      <Box >
         <Box sx={{marginBottom: 2}}>
           <Typography 
           variant="h4"
@@ -24,7 +24,7 @@ const Cards: React.FC = () => {
                   <CardActionArea>
                     <Card style={{ backgroundImage: `url(${range.image})`,
                       backgroundSize: 'cover',
-                      width: 270,
+                      
                       height: 270,
                       color: 'white',
                       borderRadius: 16 }}>
